@@ -1,0 +1,1203 @@
+To request GPUs, add --gpus-per-node X or --gpus X, where X is the desired number of GPUs.
+Job 2785697 running on hopper064
+WARNING: 32 of 32 processes have HCAs believed to support ODP.  However, the
+         corresponding software support was not found at configure time.
+         Please see the README for GASNet's ibv-conduit for more info on ODP.
+         To suppress this message set environment variable
+         GASNET_ODP_VERBOSE=0 or reconfigure with --disable-ibv-odp
+         (see ibv-conduit's README for more information).
+WARNING: Beginning a potentially slow probe of max pinnable memory...
+WARNING: Probe of max pinnable memory completed in 8.87149s.
+WARNING:   Probe of max pinnable memory has yielded '62 GB'.
+WARNING:   If you have the same memory configuration on all nodes, then
+WARNING:   to avoid this probe in the future either reconfigure using
+WARNING:      --with-ibv-physmem-max='62 GB'
+WARNING:   or run with environment variable
+WARNING:      GASNET_PHYSMEM_MAX='62 GB'.
+WARNING: For more information see "Slow PHYSMEM probe at start-up"
+WARNING: in ibv-conduit's README.
+[91mWARNING: [0mOutput directory results/real_k100 already exists. May overwrite existing files
+[91mWARNING: [0mSamples directory already exists. May overwrite existing files
+[91mWARNING: [0mresults/real_k100/simforager.log exists. Renaming to results/real_k100/simforager-240909161919.log
+[94mSimForager version SimForager version 0.1.1.729ab55-dirty-fish built on 20240909_161830[0m
+[94mOptions:[0m
+[94m  dim =                         500 500 1[0m
+[94m  whole-lung-dim =              500 500 1[0m
+[94m  timesteps =                   1440[0m
+[94m  infection-coords =            random:1000[0m
+[94m  initial-infection =           100[0m
+[94m  incubation-period =           0[0m
+[94m  apoptosis-period =            1000000[0m
+[94m  expressing-period =           1000000[0m
+[94m  infectivity =                 0.9[0m
+[94m  infectivity-multiplier =      1.0[0m
+[94m  virion-production =           1.1[0m
+[94m  virion-production-multiplier = 1.0[0m
+[94m  virion-clearance =            0.0[0m
+[94m  virion-diffusion =            0.0[0m
+[94m  chemokine-production =        0.0[0m
+[94m  chemokine-decay =             0.0[0m
+[94m  chemokine-diffusion =         1.0[0m
+[94m  min-chemokine =               0.0[0m
+[94m  antibody-factor =             1[0m
+[94m  antibody-period =             1000000[0m
+[94m  tcell-generation-rate =       1[0m
+[94m  tcell-initial-delay =         0[0m
+[94m  tcell-vascular-period =       2[0m
+[94m  tcell-tissue-period =         1000000[0m
+[94m  tcell-binding-period =        2[0m
+[94m  max-binding-prob =            1[0m
+[94m  tcells-follow-gradient =      false[0m
+[94m  seed =                        29[0m
+[94m  sample-period =               1[0m
+[94m  sample-resolution =           1[0m
+[94m  max-block-dim =               10[0m
+[94m  output =                      results/real_k100[0m
+[94m  kappa =                       100[0m
+[94m_________________________[0m
+Starting run with 32 processes on 1 node at 09/09/24 16:19:19
+Initial free memory across all nodes: 83.16GB
+[34mStarting with 83.16GB free on node 0[0m
+Dividing 250000 grid points into 10000 squares of size 25 (5^2), with 313 per process
+Total initial memory required per process is at least 703.03KB with each grid point requiring on average 92 bytes
+[34mMemory used on node 0 after initialization is  17.11MB[0m
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (419, 437, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (431, 312, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 188, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (96, 162, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (359, 334, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 257, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (144, 344, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (113, 203, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 333, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (352, 305, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (104, 411, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (61, 169, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (216, 256, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (164, 405, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (315, 82, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (271, 255, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 77, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (194, 323, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (205, 366, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (219, 180, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (118, 346, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (83, 205, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (370, 298, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (354, 300, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (161, 147, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (134, 314, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (379, 333, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (65, 234, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (251, 317, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (267, 435, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (434, 214, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (153, 358, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (191, 335, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (138, 165, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (440, 177, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (416, 194, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (173, 187, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (159, 74, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (297, 282, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (325, 316, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (187, 298, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 381, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (53, 77, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (404, 99, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (263, 304, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (109, 449, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (342, 181, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (445, 80, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (176, 212, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 129, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (107, 139, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (395, 405, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (216, 421, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (121, 162, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (396, 113, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (331, 97, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (143, 332, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (193, 351, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (198, 100, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (133, 63, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (279, 199, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (206, 54, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (324, 304, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (428, 351, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (68, 75, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (109, 220, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (311, 139, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (398, 156, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (448, 196, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (415, 246, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (285, 388, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (399, 97, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (339, 51, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 319, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 61, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (191, 379, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (411, 328, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (367, 215, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (123, 377, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (260, 236, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (439, 392, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (323, 67, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (372, 91, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (160, 262, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (354, 425, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (72, 115, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (134, 340, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (343, 150, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (435, 100, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (408, 189, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (148, 310, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (125, 244, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (365, 62, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (220, 281, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (324, 70, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (381, 335, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (235, 324, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (69, 125, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (51, 235, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (233, 161, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (222, 365, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (276, 244, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (156, 172, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (342, 108, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (169, 281, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (292, 231, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (431, 302, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (394, 140, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (69, 142, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (338, 215, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (398, 198, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (147, 351, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (337, 74, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (231, 59, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (116, 198, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (334, 202, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (341, 97, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (112, 434, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (91, 356, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (238, 278, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (111, 151, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 89, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (93, 243, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (238, 249, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (248, 152, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (291, 372, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (149, 332, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (215, 367, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (241, 283, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (85, 125, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (67, 389, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (213, 283, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 273, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (265, 346, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (54, 171, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (109, 438, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (396, 358, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (416, 186, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (173, 125, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (189, 66, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (210, 69, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (381, 138, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (410, 194, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (181, 175, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (231, 250, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (413, 306, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (210, 334, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (168, 81, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (94, 149, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (326, 391, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (434, 240, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (440, 365, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (96, 93, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (265, 326, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (52, 219, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (105, 422, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (239, 134, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 64, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (255, 188, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (131, 141, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (278, 266, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (164, 377, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (438, 181, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (429, 233, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (185, 186, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (52, 271, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (203, 203, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (55, 219, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (144, 295, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (312, 343, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (390, 139, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (367, 335, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 87, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (438, 154, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (328, 66, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (393, 446, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (441, 177, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (306, 373, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (391, 393, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (333, 184, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (265, 411, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (99, 257, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (120, 301, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (411, 312, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (291, 284, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (335, 393, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (324, 258, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (210, 124, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (393, 181, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (241, 201, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (326, 323, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (385, 55, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (100, 202, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (302, 388, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (269, 268, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (150, 287, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (183, 443, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (413, 182, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (445, 213, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (267, 168, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (305, 99, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (70, 92, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (50, 66, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (128, 423, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (134, 96, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (107, 90, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (348, 449, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (92, 109, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (358, 190, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (94, 308, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (406, 51, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (435, 53, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (290, 142, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (188, 317, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (129, 422, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (117, 197, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (371, 264, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (331, 187, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (396, 122, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (346, 272, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (94, 307, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (296, 261, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (143, 151, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (442, 433, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (152, 396, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (188, 218, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (232, 120, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (270, 209, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (363, 287, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (101, 166, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (158, 396, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (333, 217, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (309, 433, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (224, 252, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (178, 219, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (189, 51, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (403, 352, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (346, 220, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (305, 431, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (164, 429, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (224, 156, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (184, 186, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (54, 198, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (233, 378, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (150, 273, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 138, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (341, 390, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (288, 142, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (97, 432, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (383, 180, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (389, 329, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (398, 80, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (203, 424, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (143, 163, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (185, 404, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (179, 377, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (249, 166, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (345, 113, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (295, 417, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (268, 166, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (316, 265, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (387, 445, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (105, 325, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (351, 378, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (410, 338, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (172, 239, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (437, 114, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (373, 254, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (390, 60, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (426, 170, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (50, 71, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (269, 102, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (63, 193, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (50, 77, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (96, 242, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (151, 169, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (73, 57, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (133, 130, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (245, 401, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (82, 446, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (267, 70, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (110, 344, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (121, 63, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (52, 354, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (136, 237, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (82, 367, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (286, 209, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (62, 233, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (448, 307, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (85, 379, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (136, 110, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (68, 365, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (172, 202, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (135, 419, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (184, 150, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (298, 69, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (275, 224, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (297, 58, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (110, 92, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (276, 164, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (302, 120, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (305, 297, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 52, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (55, 361, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (59, 99, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (261, 181, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (336, 102, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (115, 303, 0) after 0 tries
+[31m[12] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (214, 338, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (107, 87, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (228, 359, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (348, 179, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (371, 67, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (347, 216, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (57, 329, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (264, 245, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (292, 247, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (316, 216, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (86, 79, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (241, 227, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 297, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (394, 240, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (246, 227, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (168, 259, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (355, 172, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (341, 310, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (159, 266, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (88, 137, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (402, 293, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (360, 148, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (360, 119, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (301, 342, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (243, 414, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (423, 102, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (142, 358, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (235, 415, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (273, 391, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (75, 56, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (217, 388, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (370, 269, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (281, 393, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (56, 330, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (109, 138, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (331, 289, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (83, 428, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (104, 401, 0) after 0 tries
+[31m[15] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (255, 219, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (195, 364, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (186, 392, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (449, 315, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (354, 267, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (415, 130, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (95, 277, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (181, 293, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (216, 294, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (137, 359, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (83, 356, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (100, 242, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (203, 156, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (103, 387, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (114, 208, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (92, 316, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (225, 164, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (216, 375, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (78, 293, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (427, 144, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (215, 211, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (198, 313, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (239, 158, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (100, 304, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (432, 344, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (118, 373, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (96, 330, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (128, 139, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (56, 283, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (168, 104, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (157, 203, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (431, 173, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (50, 417, 0) after 0 tries
+Fraction of circulating T cells extravasating is 1
+# datetime                    step    incb       expr       apop       dead       tvas       ttis       chem       virs       chempts    %infct     <%active  lbln>
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (81, 384, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (263, 98, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (333, 380, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 300, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (232, 150, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (129, 110, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (181, 356, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (358, 328, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (331, 246, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 264, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (434, 138, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (206, 82, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (434, 97, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (183, 412, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (181, 437, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (183, 364, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (384, 448, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (444, 436, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (350, 112, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (404, 129, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (367, 248, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (362, 258, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (354, 224, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (178, 79, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (213, 216, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (280, 372, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (430, 134, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (373, 282, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (186, 188, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (53, 356, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (64, 66, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (404, 274, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (268, 179, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (299, 244, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (170, 83, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 381, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (245, 182, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (438, 174, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (77, 296, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (366, 405, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (85, 179, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (403, 265, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (240, 300, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (233, 199, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (422, 324, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (289, 410, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (403, 300, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (277, 242, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (212, 420, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (98, 138, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (220, 279, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (145, 318, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (132, 290, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (61, 347, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (136, 328, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (256, 80, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (139, 122, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (342, 226, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (255, 310, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (284, 367, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (194, 275, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (322, 123, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (100, 150, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 404, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (426, 106, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (176, 286, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (219, 132, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (186, 174, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (445, 297, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (189, 275, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (221, 292, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (385, 123, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 370, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (182, 275, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (310, 315, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (271, 221, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (264, 357, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (145, 392, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (415, 216, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (273, 100, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (304, 115, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (260, 53, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (171, 412, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (331, 292, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (213, 227, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (359, 214, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (120, 129, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (321, 163, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (125, 236, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (409, 100, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (60, 323, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (175, 313, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (335, 248, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (391, 263, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (65, 121, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (433, 186, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (231, 405, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (243, 245, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (84, 448, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 443, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (317, 175, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (242, 195, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (219, 293, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (194, 270, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (228, 175, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (282, 265, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (281, 269, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (155, 262, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (61, 424, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (281, 87, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (185, 151, 0) after 0 tries
+[31m[9] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (430, 140, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (360, 324, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (216, 83, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (327, 69, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (107, 105, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (258, 431, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (177, 222, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (68, 194, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (371, 248, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (315, 111, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (383, 54, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (328, 268, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (85, 308, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (400, 198, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (276, 354, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (435, 341, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (133, 240, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (364, 310, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (211, 424, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (169, 345, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (191, 105, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 258, 0) after 0 tries
+[31m[13] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (73, 196, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (174, 248, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (426, 118, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (268, 279, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (407, 169, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (379, 167, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (328, 424, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (286, 418, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (290, 374, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (243, 220, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (94, 132, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (153, 374, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 101, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (167, 96, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (447, 208, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (376, 335, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (383, 93, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (385, 382, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (350, 89, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (141, 96, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (162, 371, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (239, 406, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (371, 251, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (332, 257, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (400, 433, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (142, 377, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (417, 85, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (91, 171, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (282, 155, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 128, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (126, 417, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (165, 285, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (378, 340, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (165, 287, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (98, 386, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (207, 108, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (239, 432, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (315, 429, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (419, 252, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (312, 203, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (219, 105, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (118, 326, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (94, 302, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (328, 315, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (173, 68, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (110, 351, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (391, 141, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (408, 185, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (385, 269, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (111, 104, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (356, 112, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (179, 191, 0) after 0 tries
+[31m[19] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (266, 167, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (143, 328, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (225, 75, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (350, 55, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (410, 226, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (173, 296, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (266, 302, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (176, 210, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (388, 132, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 174, 0) after 0 tries
+[31m[26] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (400, 258, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (203, 274, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (381, 136, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (292, 261, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (411, 207, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (309, 316, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (282, 167, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 178, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (293, 299, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (250, 184, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (283, 102, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (138, 304, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 286, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (282, 246, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (341, 115, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (93, 162, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (144, 197, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (120, 182, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (140, 238, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (166, 96, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (258, 164, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (292, 405, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (96, 366, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (111, 79, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (296, 398, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (311, 126, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (333, 311, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (145, 374, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (341, 364, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (63, 261, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (115, 148, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (165, 111, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (243, 441, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (247, 247, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (130, 94, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (289, 256, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (259, 279, 0) after 0 tries
+[31m[4] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 235, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (104, 378, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (79, 191, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (253, 302, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (185, 447, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (100, 383, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (416, 232, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (363, 300, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (444, 348, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (211, 132, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (112, 281, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (168, 123, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (168, 349, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (93, 331, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (348, 445, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (289, 156, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (247, 409, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (216, 174, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (191, 439, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (300, 250, 0) after 0 tries
+[31m[6] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (323, 444, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (421, 377, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (231, 405, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (230, 304, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (378, 294, 0) after 0 tries
+[31m[11] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (390, 423, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (57, 182, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (200, 239, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (194, 285, 0) after 0 tries
+[31m[17] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (134, 209, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (420, 335, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (363, 112, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (201, 169, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (177, 211, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (77, 179, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 355, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (202, 440, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (312, 181, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 359, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (439, 365, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (432, 287, 0) after 0 tries
+[31m[5] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (394, 315, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (142, 328, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (413, 164, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (125, 325, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (352, 370, 0) after 0 tries
+[31m[16] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (334, 357, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (59, 387, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (370, 302, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (362, 337, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (75, 83, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (265, 143, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (53, 265, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (196, 410, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (359, 250, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (87, 247, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 444, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (177, 141, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (116, 223, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (372, 320, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (93, 232, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (169, 224, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (60, 243, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (62, 190, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (309, 413, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (218, 153, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (436, 362, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (118, 416, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (399, 427, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (74, 249, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (219, 353, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (402, 369, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (418, 264, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (354, 417, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (289, 295, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (275, 378, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (130, 388, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (375, 61, 0) after 0 tries
+[31m[1] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (145, 63, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (177, 243, 0) after 0 tries
+[31m[2] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (238, 90, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (322, 221, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (241, 373, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (375, 84, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (344, 181, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (409, 77, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (381, 221, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (278, 182, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (222, 164, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (305, 300, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (395, 307, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (444, 60, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (278, 82, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (325, 299, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (139, 252, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (436, 113, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (159, 301, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (361, 145, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (309, 436, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (291, 207, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (247, 50, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (229, 104, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (379, 232, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (214, 246, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (76, 148, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (80, 53, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (314, 95, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (236, 146, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (209, 213, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (384, 403, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (109, 102, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (187, 104, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (228, 188, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (71, 294, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (313, 127, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (279, 240, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (207, 78, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (165, 254, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (301, 308, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (78, 289, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (192, 195, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (427, 314, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (190, 243, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (70, 341, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (172, 255, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (158, 372, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (307, 302, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (227, 412, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (375, 155, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (256, 104, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (299, 371, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (282, 120, 0) after 0 tries
+[31m[23] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 430, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (196, 396, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (338, 313, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (346, 414, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (399, 185, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (319, 147, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (315, 292, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (374, 406, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (77, 54, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (54, 289, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (88, 110, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (87, 69, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (355, 255, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (246, 191, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (159, 306, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (330, 185, 0) after 0 tries
+[31m[24] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (421, 432, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (219, 434, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (240, 52, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (370, 293, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (80, 296, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (112, 290, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (378, 259, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (393, 254, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 351, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 176, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (155, 103, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (336, 153, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (165, 189, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (252, 277, 0) after 0 tries
+[31m[25] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (254, 55, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (318, 288, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (195, 337, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (121, 141, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (163, 228, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (416, 336, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (347, 405, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (320, 308, 0) after 0 tries
+[31m[27] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 408, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (136, 214, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (220, 212, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (153, 168, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (239, 250, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (288, 296, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (151, 361, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (439, 381, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (375, 194, 0) after 0 tries
+[31m[28] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (52, 372, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (436, 418, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (271, 80, 0) after 0 tries
+[31m[30] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (299, 103, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (273, 401, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (140, 427, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (164, 317, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (199, 129, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (223, 115, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (165, 105, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (215, 310, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (74, 104, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (132, 298, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (129, 360, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (347, 96, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (129, 134, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (277, 187, 0) after 0 tries
+[31m[31] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (144, 114, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (98, 243, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (128, 55, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (230, 170, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (307, 447, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (88, 127, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (209, 388, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (92, 428, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (412, 367, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (326, 82, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (152, 149, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (244, 293, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (348, 392, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (147, 445, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (336, 397, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (330, 249, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (68, 138, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (113, 268, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (308, 383, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (170, 160, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (318, 121, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (309, 251, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (209, 216, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (250, 436, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (251, 221, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (447, 133, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (155, 162, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (114, 333, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (303, 114, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (173, 214, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (401, 250, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (403, 94, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (160, 229, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (53, 434, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (126, 142, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (388, 204, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (394, 238, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (415, 245, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (367, 137, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (400, 87, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (326, 378, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (128, 408, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (131, 156, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (204, 63, 0) after 0 tries
+[31m[10] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (214, 53, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (235, 147, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (424, 114, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (187, 352, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (156, 199, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (414, 313, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (229, 407, 0) after 0 tries
+[31m[18] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (230, 357, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (310, 345, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (324, 316, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (286, 219, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (193, 110, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (185, 79, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (268, 242, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (129, 176, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (195, 144, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (378, 128, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (384, 361, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (413, 225, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (175, 314, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (172, 444, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (344, 112, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (416, 223, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (303, 426, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (235, 122, 0) after 0 tries
+[31m[20] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (192, 394, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (122, 54, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (388, 353, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (113, 350, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (361, 193, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (421, 413, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (228, 336, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (258, 198, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (199, 312, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (81, 102, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (322, 244, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (56, 399, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (94, 401, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (360, 173, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (275, 421, 0) after 0 tries
+[31m[3] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (181, 421, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (321, 82, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (161, 242, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (88, 247, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 125, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (287, 63, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (407, 64, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (160, 182, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (413, 156, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (337, 122, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (375, 198, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (264, 100, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (225, 349, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (367, 321, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (432, 156, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (382, 164, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (171, 85, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (223, 427, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (234, 201, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (233, 423, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (406, 101, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (405, 221, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (238, 149, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (253, 199, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (398, 363, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (99, 120, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (379, 135, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (296, 204, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (402, 430, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (100, 433, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (265, 320, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (157, 112, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (289, 240, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (135, 170, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (343, 385, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (203, 203, 0) after 0 tries
+[31m[14] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (57, 344, 0) after 0 tries
+[31m[22] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (52, 232, 0) after 0 tries
+[31m[8] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (334, 249, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (98, 255, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (342, 77, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (92, 413, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (144, 349, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (281, 97, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (227, 142, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (75, 59, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (248, 416, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (397, 87, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (206, 113, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (150, 152, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (424, 435, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (274, 432, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (150, 258, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (69, 343, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (286, 278, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (110, 409, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (57, 194, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (352, 74, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (152, 172, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (349, 223, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (77, 344, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (372, 331, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (108, 337, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (207, 247, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (67, 275, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (222, 157, 0) after 0 tries
+[31m[29] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (270, 406, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (105, 193, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (139, 418, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (422, 293, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (102, 218, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (202, 390, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (423, 424, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (347, 410, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (341, 233, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (96, 113, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (209, 200, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (174, 364, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (91, 429, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (302, 337, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (213, 316, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (220, 142, 0) after 0 tries
+[31m[7] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (208, 320, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (339, 353, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (382, 73, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (245, 407, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (80, 314, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (56, 71, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (331, 429, 0) after 0 tries
+[31m[21] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (431, 316, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (87, 113, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (197, 305, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (432, 374, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (70, 159, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (258, 174, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (241, 270, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (262, 56, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (408, 175, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (266, 372, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (312, 278, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (59, 321, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (393, 262, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (305, 99, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (312, 94, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (52, 201, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (432, 356, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (354, 75, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (231, 421, 0) after 0 tries
+[31m[0] <main.cpp:142> WARNING: [0mTime step 0: SUCCESSFUL initial infection at (130, 109, 0) after 0 tries
+*** Caught a fatal signal (proc 0): SIGSEGV(11)
+*** Caught a fatal signal (proc 2): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 3): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 7): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+srun: error: hopper064: tasks 0,3,13,21: Segmentation fault
+*** Caught a fatal signal (proc 8): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 9): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+srun: error: hopper064: tasks 1,4-6,12,14,20,22-23,26,28,30: Aborted
+*** Caught a fatal signal (proc 10): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 11): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 13): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 15): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 16): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 17): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 18): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 19): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 21): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 24): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 25): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 27): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 29): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 31): SIGSEGV(11)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  [91m[4] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 48923 != 48823
+
+  what():  [91m[28] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 74314 != 74289
+
+*** Caught a fatal signal (proc 4): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[6] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 60972 != 60872
+
+*** Caught a fatal signal (proc 6): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[20] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 154114 != 154089
+
+*** Caught a fatal signal (proc 20): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[26] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 151859 != 151834
+
+*** Caught a fatal signal (proc 26): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+*** Caught a fatal signal (proc 28): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[30] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 169564 != 169539
+
+*** Caught a fatal signal (proc 30): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[5] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 25747 != 25647
+
+*** Caught a fatal signal (proc 5): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[22] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 91774 != 91649
+
+*** Caught a fatal signal (proc 22): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[23] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 122199 != 122074
+
+*** Caught a fatal signal (proc 23): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[1] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 203248 != 203948
+
+*** Caught a fatal signal (proc 1): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[12] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 73124 != 72999
+
+*** Caught a fatal signal (proc 12): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+  what():  [91m[14] <tissue.cpp:371> ERROR: [0mmismatched coords to grid i 175554 != 175529
+
+*** Caught a fatal signal (proc 14): SIGABRT(6)
+NOTICE: Before reporting bugs, run with GASNET_BACKTRACE=1 in the environment to generate a backtrace. 
+NOTICE: We recommend linking the debug version of GASNet to assist you in resolving this application issue.
+srun: error: hopper064: tasks 2,8,10-11,16,18-19,24: Segmentation fault (core dumped)
+srun: error: hopper064: tasks 17,29: Segmentation fault (core dumped)
+srun: error: hopper064: tasks 9,15,25,27,31: Segmentation fault (core dumped)
+srun: error: hopper064: task 7: Segmentation fault (core dumped)

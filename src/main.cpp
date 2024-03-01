@@ -273,7 +273,6 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
     // if (grid_point->virions < 0) grid_point->virions = 0;
     tcell->binding_period--;
     // done with binding when set to -1
-    if (tcell->binding_period == 0) tcell->binding_period = -1;
   } else {
     // not bound to an epicell - try to bind first with this cell then any one of the neighbors
     auto rnd_nbs = nbs;

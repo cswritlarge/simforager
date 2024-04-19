@@ -77,7 +77,7 @@ void GridCoords::set_rnd(shared_ptr<Random> rnd_gen) {
 TCell::TCell(const string &id)
     : id(id) {
   tissue_time_steps = _rnd_gen->get_poisson(_options->tcell_tissue_period);
-  DBG("init tcell ", id, " ", tissue_time_steps, "\n");
+  WARN("init tcell ", id, " ", tissue_time_steps, "\n");
 }
 
 TCell::TCell() { tissue_time_steps = _rnd_gen->get_poisson(_options->tcell_tissue_period); }

@@ -108,9 +108,50 @@ class SimStats {
   }
 };
 
+
+
+class SimStatsTracking {
+ private:
+  ofstream log_file;
+ public:
+  void init() {
+    log_file.open(_options->output_dir + "/tcell_tracking_" + std::to_string(rank_me()) + ".csv");
+    log_file << "# time, id, x, y, z, idx, status" << endl;
+    // if (!rank_me()) {
+      // log_file.open(_options->output_dir + "/tcell_tracking.csv");
+      // log_file << "# time, id, x, y, z, idx, status" << endl;
+    //}
+  }
+
+  string to_str(int time_step, Tissue &tissue) {
+    ostringstream oss;
+    for (int64_t i = 0; i < tissue.grid_points->size(); i++) {
+      GridPoint *grid_point = &(*(tissue.grid_points))[i];
+      if (grid_point->tcell != nullptr) {
+        oss << time_step << ", ";
+        oss << grid_point->tcell->id << ", ";
+        oss << grid_point->coords.x << ", ";
+        oss << grid_point->coords.y << ", ";
+        oss << grid_point->coords.z << ", ";
+        oss << i << ", ";
+        oss << grid_point->tcell->tissue_time_steps << endl;
+      } 
+    }
+    return oss.str();
+  }
+
+  void log(int time_step, Tissue &tissue) {
+    string s = to_str(time_step, tissue);
+    log_file << s;
+  }
+}; 
+
+
+
 ofstream _logstream;
 bool _verbose = false;
 SimStats _sim_stats;
+SimStatsTracking _sim_stats_tracking;
 shared_ptr<Options> _options;
 
 IntermittentTimer generate_tcell_timer(__FILENAME__ + string(":") + "generate tcells");
@@ -669,6 +710,7 @@ void run_sim(Tissue &tissue) {
   // TODO Allow for 1 timestep
   auto five_perc = (_options->num_timesteps >= 50) ? _options->num_timesteps / 50 : 1;
   _sim_stats.init();
+  _sim_stats_tracking.init();
   int64_t whole_lung_volume = (int64_t)_options->whole_lung_dims[0] *
                               (int64_t)_options->whole_lung_dims[1] *
                               (int64_t)_options->whole_lung_dims[2];
@@ -772,6 +814,7 @@ void run_sim(Tissue &tissue) {
     log_timer.start();
     _sim_stats.log(time_step);
     barrier();
+    _sim_stats_tracking.log(time_step, tissue);
     log_timer.stop();
 
 #ifdef DEBUG

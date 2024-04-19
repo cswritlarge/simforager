@@ -8,3 +8,7 @@ __pycache__
 results
 transfer.sh
 batch-scripts/*.out
+*.mp4
+*.png
+simforager-results-*
+*.out

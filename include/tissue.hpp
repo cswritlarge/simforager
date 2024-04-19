@@ -161,7 +161,7 @@ inline int64_t get_num_grid_points() {
 }
 
 class Tissue {
- private:
+ public:
   using grid_points_t = upcxx::dist_object<vector<GridPoint>>;
   grid_points_t grid_points;
   vector<GridPoint>::iterator grid_point_iter;

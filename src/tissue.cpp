@@ -390,23 +390,52 @@ vector<int64_t> *Tissue::get_neighbors(GridCoords c) {
   if (!grid_point->neighbors) {
     grid_point->neighbors = new vector<int64_t>;
     int newx, newy, newz;
-    for (int i = -1; i <= 1; i++) {
-      for (int j = -1; j <= 1; j++) {
-        for (int k = -1; k <= 1; k++) {
-          newx = c.x + i;
-          newy = c.y + j;
-          newz = c.z + k;
-          if ((newx >= 0 && newx < _grid_size->x) && (newy >= 0 && newy < _grid_size->y) &&
-              (newz >= 0 && newz < _grid_size->z)) {
-            if (newx != c.x || newy != c.y || newz != c.z) {
-              grid_point->neighbors->push_back(GridCoords::to_1d(newx, newy, newz));
-            }
-          }
+    //int cw_x[8] = {-1,0,1,1,1,0,-1,-1};
+    int cw_x[26] = {-1,0,1,1,1,0,-1,-1,-1,0,1,1,1,0,-1,-1,0,-1,0,1,1,1,0,-1,-1,0};
+    //int cw_y[8] = {1,1,1,0,-1,-1,-1,0};
+    int cw_y[26] = {1,1,1,0,-1,-1,-1,0,1,1,1,0,-1,-1,-1,0,0,1,1,1,0,-1,-1,-1,0,0};
+    //int cw_z[8] = {-1,-1,-1,0,0,1,1,1};
+    //int cw_z[3] = {0,1,-1}
+    int cw_z[26] = {0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,1,1,1,1,1,1,1,1,1};
+    //for (int k = -1; k <= 1; k++) {
+    //for (int k=0; k<3; k++) { // need this silliness for z indicies to go 0, 1, -1
+    //for (int i = -1; i <= 1; i++) { HOLY JESUS WHAT A STUPID MISTAKE - this was the loop we were using to index the above arrays
+    //for (int i = -1; i <= 1; i++) {
+      //for (int j = -1; j <= 1; j++) {
+    for (int i = 0; i<=25; i++) {
+      newx = c.x + cw_x[i];
+      newy = c.y + cw_y[i];
+      //newz = c.z + k;
+      newz = c.z + cw_z[i];
+      if ((newx >= 0 && newx < _grid_size->x) && (newy >= 0 && newy < _grid_size->y) &&
+          (newz >= 0 && newz < _grid_size->z)) {
+        //if (newx != c.x || newy != c.y || newz != c.z) {
+          grid_point->neighbors->push_back(GridCoords::to_1d(newx, newy, newz));
         }
-      }
+      else {grid_point->neighbors->push_back(GridCoords::to_1d(c.x, c.y, c.z));} //edge neighborhood self-referential
+        //} // will stay at current cell if heading directs off edge
+      //}
     }
   }
+  //}
   return grid_point->neighbors;
+}
+
+// RECURSIVE build neighborhood of size distance
+// dist_rank: 0 is Moore neighborhood, 1 is Moore ring of 1 cell around that, etc.
+// NOT a pointer, just creates the object then destroys it
+set<int64_t> Tissue::get_neighborhood(GridCoords c, unsigned dist_rank){
+  GridPoint *grid_point = Tissue::get_local_grid_point(grid_points, c.to_1d());
+  //set<int64_t> grid_point_neighbors_set(grid_point->neighbors.begin(), grid_point->neighbors.end());
+  set<int64_t> grid_point_neighbors_set(grid_point->neighbors->begin(), grid_point->neighbors->end());
+  if (dist_rank == 0){return grid_point_neighbors_set;} //base case
+  set<int64_t> neighbors_neighbors;
+  for (auto &grid_point_neighbor : grid_point_neighbors_set){
+    auto neighbors_set = get_neighborhood(grid_point_neighbor, dist_rank-1);
+    neighbors_neighbors.insert(neighbors_set.begin(), neighbors_set.end());
+  }
+neighbors_neighbors.insert(grid_point_neighbors_set.begin(), grid_point_neighbors_set.end());
+return neighbors_neighbors;
 }
 
 int64_t Tissue::get_num_local_grid_points() { return grid_points->size(); }
@@ -548,7 +577,8 @@ bool Tissue::try_add_tissue_tcell(int64_t grid_i, TCell &tcell) {
                if (grid_point->tcell) return false;
                new_active_grid_points->insert({grid_point, true});
                tcell.moved = true;
-               grid_point->tcell = new TCell(tcell);
+               grid_point->tcell = new TCell(tcell); // Steve & Ariana's way
+               //grid_point->tcell = &tcell; // Carter's way
                return true;
              },
              grid_points, new_active_grid_points, grid_i, tcell)

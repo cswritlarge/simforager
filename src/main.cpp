@@ -3,10 +3,11 @@
 // Steven Hofmeyr, LBNL May 2020
 
 #include <fcntl.h>
-#include <math.h>
+//#include <math.h>
 #include <stdarg.h>
 #include <unistd.h>
 
+#include <cmath>
 #include <algorithm>
 #include <chrono>
 #include <fstream>
@@ -211,6 +212,8 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
   TCell *tcell = grid_point->tcell;
   if (tcell->moved) {
     // don't update tcells that were added this time step
+    // std::cout << "new tissue tcell heading is " << tcell->heading << endl; // Julie tcell wave debug
+    // above line was helpful, doesn't seem like initialization is the issue...
     tcell->moved = false;
     update_tcell_timer.stop();
     return;
@@ -220,7 +223,7 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
     _sim_stats.tcells_tissue--;
     DBG(time_step, " tcell ", tcell->id, " dies in tissue at ", grid_point->coords.str(), "\n");
     // not adding to a new location means this tcell is not preserved to the next time step
-    delete grid_point->tcell;
+    delete grid_point->tcell; //@TODO make different case for fish dying?
     grid_point->tcell = nullptr;
     update_tcell_timer.stop();
     return;
@@ -229,7 +232,7 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
     DBG(time_step, " tcell ", tcell->id, " is bound at ", grid_point->coords.str(), "\n");
     // this tcell is bound
     //grid_point->nb_virions -= 100;
-    int test_virions = grid_point->virions -=42;
+    int test_virions = grid_point->virions - 42;
     if (test_virions < 0) grid_point->virions = 0;
     else grid_point->virions -= 42; //arbitrary large bite size
     // if (grid_point->virions < 0) grid_point->virions = 0;
@@ -289,33 +292,91 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
       }
     }
     if (highest_chemokine == 0) {
-      // no chemokines found - move randomly
-      auto rnd_nb_i = _rnd_gen->get(0, (int64_t)nbs.size());
-      selected_grid_i = nbs[rnd_nb_i];
+      // no chemokines found - move randomly = simcov default behavior
+      //auto rnd_nb_i = _rnd_gen->get(0, (int64_t)nbs.size());
+      
+      double mu = 0, x = 0;
+      double bessel = std::cyl_bessel_i(0, tcell->kappa);
+      auto rehead = exp(tcell->kappa*cos(x-mu))/(2*M_PI*bessel);
+      int test_heading = static_cast<int>(tcell->heading) + static_cast<int>(rehead);
+      // constrain heading between 0 and 360
+      if (test_heading > 360){ 
+        //std::cout << "IF original heading is: " << tcell->heading << std::endl;
+        int mod_360 = test_heading % 360;
+        tcell->heading = static_cast<float>(mod_360);
+      } else if (test_heading < 0){
+        int add_neg = test_heading + 360;
+        tcell->heading = static_cast<float>(add_neg);
+      } else {
+        //std::cout << "original heading is: " << tcell->heading << std::endl;
+        tcell->heading = tcell->heading + rehead;
+        //std::cout << "reset heading is: " << tcell->heading << std::endl;
+      }
+      //std::cout << "new tcell heading iss" << tcell->heading << endl;} // it DOES seem skewed toward 360
+      //selected_grid_i = nbs[rnd_nb_i];
       DBG(time_step, " tcell ", tcell->id, " try random move to ",
           GridCoords(selected_grid_i).str(), "\n");
     } else {
       DBG(time_step, " tcell ", tcell->id, " - highest chemokine at ",
           GridCoords(selected_grid_i).str(), "\n");
     }
-    // try a few times to find an open spot
-    for (int i = 0; i < 5; i++) {
+    // SIMCoV: try a few times to find an open spot
+    //for (int i = 0; i < 5; i++) {
+    // @TODO: COMMENT THIS WHOLE FUNCTION
+    //auto crw_nb_i = std::floor(tcell->heading / 45);
+    //int crw_nb_i = std::floor(((tcell->heading) / 45));
+    //unsigned int crw_nb_i = static_cast<unsigned int>((tcell->heading) / 45);
+    //unsigned int crw_nb_i = 1;
+    int crw_nb_i = (tcell->heading / 45);
+    //std::cout << "I am process (rank): " << upcxx::rank_me() << " Right after assignment crw_nb_i: " << crw_nb_i << std::endl;
+    selected_grid_i = nbs[crw_nb_i];
+    int counter = 0;
+    int cw = 1;
+    if (((crw_nb_i * 45 + 22.5) - tcell->heading) < 0){cw = -1;}
+    //set<int64_t> fish_neighborhood = tissue.get_neighborhood(grid_point->coords, 3); // just testing using this function rn
+    //unsigned int fish_neighbors_count = 0;
+    //for(set<int64_t>::iterator itr = fish_neighborhood.begin(); itr != fish_neighborhood.end(); itr++){
+    //  if (grid_point->tcell != nullptr) {fish_neighbors_count++;} // @TODO use this for something
+    //}
+    int upcxx_proc = upcxx::rank_me();
+    if (upcxx_proc != upcxx::rank_me()) {
+      std::cout << "variables are not local!" << std::endl;
+    }
+    
+    // show me the degenerate neighbors
+    for (int j=0; j<8; j++) {
+      std::cout << "here are all the degenerate neighbors: " << nbs[j] << std::endl;
+    }
+    
+    while (counter < 8) { // turn all the way around
       if (tissue.try_add_tissue_tcell(selected_grid_i, *tcell)) {
         DBG(time_step, " tcell ", tcell->id, " at ", grid_point->coords.str(), " moves to ",
             GridCoords(selected_grid_i).str(), "\n");
-        delete grid_point->tcell;
+        //std::cout << "IF process (rank): " << upcxx::rank_me() << " crw_nb_i: " << crw_nb_i << " tcell heading: " << tcell->heading << "tcell id: " << tcell->id << std::endl;
+        // ** std::cout << "IF process (rank): " << upcxx::rank_me() << " crw_nb_i: " << crw_nb_i << " selected_grid_i: " << selected_grid_i << "tcell id: " << tcell->id << std::endl;
+        delete grid_point->tcell; // Carter commented this out when we moved them, but Ariana convinced me that was a bad approach
         grid_point->tcell = nullptr;
         break;
       }
       // choose another location at random
-      auto rnd_nb_i = _rnd_gen->get(0, (int64_t)nbs.size());
-      selected_grid_i = nbs[rnd_nb_i];
+      //auto rnd_nb_i = _rnd_gen->get(0, (int64_t)nbs.size());
+      // proceed ccw or cw according to cw
       DBG(time_step, " tcell ", tcell->id, " try random move to ",
           GridCoords(selected_grid_i).str(), "\n");
+      //std::cout << "I am process (rank): " << upcxx::rank_me() << " While loop update: crw_nb_i before: " << crw_nb_i << " cw: " << cw << std::endl;
+      crw_nb_i = crw_nb_i + cw;
+      //std::cout << "ELSE process (rank): " << upcxx::rank_me() << "crw_nb_i after loop update: "  << crw_nb_i << "tcell id: " << tcell->id << std::endl;
+      
+      if (crw_nb_i < 0) {crw_nb_i = 7;}
+      else if (crw_nb_i > 7){crw_nb_i = 0;}
+      // ** std::cout << "ELSE1 process (rank): " << upcxx::rank_me() << " crw_nb_i: " << crw_nb_i << " selected_grid_i before update: "  << selected_grid_i << "tcell id: " << tcell->id << std::endl;
+      selected_grid_i = nbs[crw_nb_i];
+      // ** std::cout << "ELSE2 process (rank): " << upcxx::rank_me() << " crw_nb_i: " << crw_nb_i << " selected_grid_i after update: "  << selected_grid_i << "tcell id: " << tcell->id << std::endl;
+      counter++;
     }
   }
   update_tcell_timer.stop();
-}
+} //END update_tissue_cell
 
 void update_epicell(int time_step, Tissue &tissue, GridPoint *grid_point) {
   update_epicell_timer.start();
@@ -663,7 +724,6 @@ int64_t get_samples(Tissue &tissue, vector<SampleData> &samples) {
 
 void run_sim(Tissue &tissue) {
   BarrierTimer timer(__FILEFUNC__);
-
   auto start_t = NOW();
   auto curr_t = start_t;
   // TODO Allow for 1 timestep

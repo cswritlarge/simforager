@@ -397,11 +397,6 @@ vector<int64_t> *Tissue::get_neighbors(GridCoords c) {
     //int cw_z[8] = {-1,-1,-1,0,0,1,1,1};
     //int cw_z[3] = {0,1,-1}
     int cw_z[26] = {0,0,0,0,0,0,0,0,-1,-1,-1,-1,-1,-1,-1,-1,-1,1,1,1,1,1,1,1,1,1};
-    //for (int k = -1; k <= 1; k++) {
-    //for (int k=0; k<3; k++) { // need this silliness for z indicies to go 0, 1, -1
-    //for (int i = -1; i <= 1; i++) { HOLY JESUS WHAT A STUPID MISTAKE - this was the loop we were using to index the above arrays
-    //for (int i = -1; i <= 1; i++) {
-      //for (int j = -1; j <= 1; j++) {
     for (int i = 0; i<=25; i++) {
       newx = c.x + cw_x[i];
       newy = c.y + cw_y[i];

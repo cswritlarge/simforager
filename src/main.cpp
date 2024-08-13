@@ -295,9 +295,11 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
       // no chemokines found - move randomly = simcov default behavior
       //auto rnd_nb_i = _rnd_gen->get(0, (int64_t)nbs.size());
       
-      double mu = 0, x = 0;
+      //double mu = 0, x = 0;
+      double mu = 0, x = tcell->heading;
       double bessel = std::cyl_bessel_i(0, tcell->kappa);
-      auto rehead = exp(tcell->kappa*cos(x-mu))/(2*M_PI*bessel);
+      //auto rehead = exp(tcell->kappa*cos(x-mu))/(2*M_PI*bessel);
+      int rehead = 0;
       int test_heading = static_cast<int>(tcell->heading) + static_cast<int>(rehead);
       // constrain heading between 0 and 360
       if (test_heading > 360){ 
@@ -330,6 +332,7 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
     int crw_nb_i = (tcell->heading / 45);
     //std::cout << "I am process (rank): " << upcxx::rank_me() << " Right after assignment crw_nb_i: " << crw_nb_i << std::endl;
     selected_grid_i = nbs[crw_nb_i];
+    std::cout << "tcellid: " << tcell->id << " crw_nb_i: " << crw_nb_i << " selected_grid_i: " << selected_grid_i << std::endl;
     int counter = 0;
     int cw = 1;
     if (((crw_nb_i * 45 + 22.5) - tcell->heading) < 0){cw = -1;}
@@ -344,9 +347,9 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
     }
     
     // show me the degenerate neighbors
-    for (int j=0; j<8; j++) {
-      std::cout << "here are all the degenerate neighbors: " << nbs[j] << std::endl;
-    }
+    //for (int j=0; j<8; j++) {
+    //  std::cout << "here are all the degenerate neighbors: " << nbs[j] << std::endl;
+    //}
     
     while (counter < 8) { // turn all the way around
       if (tissue.try_add_tissue_tcell(selected_grid_i, *tcell)) {
@@ -366,7 +369,6 @@ void update_tissue_tcell(int time_step, Tissue &tissue, GridPoint *grid_point, v
       //std::cout << "I am process (rank): " << upcxx::rank_me() << " While loop update: crw_nb_i before: " << crw_nb_i << " cw: " << cw << std::endl;
       crw_nb_i = crw_nb_i + cw;
       //std::cout << "ELSE process (rank): " << upcxx::rank_me() << "crw_nb_i after loop update: "  << crw_nb_i << "tcell id: " << tcell->id << std::endl;
-      
       if (crw_nb_i < 0) {crw_nb_i = 7;}
       else if (crw_nb_i > 7){crw_nb_i = 0;}
       // ** std::cout << "ELSE1 process (rank): " << upcxx::rank_me() << " crw_nb_i: " << crw_nb_i << " selected_grid_i before update: "  << selected_grid_i << "tcell id: " << tcell->id << std::endl;

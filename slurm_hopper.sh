@@ -1,11 +1,12 @@
 #!/bin/bash
-#SBATCH --partition=general
-#SBATCH --nodes=2
+#SBATCH --partition=biocomp
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=2-00:00
-#SBATCH --job-name=simforagger-tutorial
-#SBATCH --mail-user=
+#SBATCH --job-name=simforager
+#SBATCH --mail-user=jchayes@unm.edu
 #SBATCH --mail-type=END
+#SBATCH --mem=0
 
 # Setup environment
 export GASNET_MAX_SEGSIZE=128MB/P

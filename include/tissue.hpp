@@ -95,6 +95,9 @@ struct TCell {
   string id;
   int binding_period = -1;
   int tissue_time_steps = -1;
+  double heading = _rnd_gen->get(0.0, 360.0);
+  double kappa = 300; // this should be between 0 and 1, correct?
+  //double kappa = _options->kappa;
   bool moved = true;
 
   UPCXX_SERIALIZED_FIELDS(id, binding_period, tissue_time_steps, moved);
@@ -193,6 +196,8 @@ class Tissue {
   intrank_t get_rank_for_grid_point(int64_t grid_i);
 
   vector<int64_t> *get_neighbors(GridCoords c);
+
+  std::set<int64_t> get_neighborhood(GridCoords, unsigned int);
 
   bool set_initial_infection(int64_t grid_i);
 

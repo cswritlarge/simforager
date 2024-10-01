@@ -74,13 +74,17 @@ void GridCoords::set_rnd(shared_ptr<Random> rnd_gen) {
   z = rnd_gen->get(0, _grid_size->z);
 }
 
-TCell::TCell(const string &id)
-    : id(id) {
-  tissue_time_steps = _rnd_gen->get_poisson(_options->tcell_tissue_period);
+//TCell::TCell(const string &id, const double &heading, const int &ts)
+TCell::TCell(const string &id, const double heading)
+    : id(id), heading(heading) {
+    //: id(id), heading(heading), tissue_time_steps(ts) {
+tissue_time_steps = _rnd_gen->get_poisson(_options->tcell_tissue_period);
   DBG("init tcell ", id, " ", tissue_time_steps, "\n");
 }
 
-TCell::TCell() { tissue_time_steps = _rnd_gen->get_poisson(_options->tcell_tissue_period); }
+TCell::TCell() { 
+  tissue_time_steps = _rnd_gen->get_poisson(_options->tcell_tissue_period); 
+}
 
 EpiCell::EpiCell(int id)
     : id(id) {
@@ -402,6 +406,7 @@ vector<int64_t> *Tissue::get_neighbors(GridCoords c) {
       newy = c.y + cw_y[i];
       //newz = c.z + k;
       newz = c.z + cw_z[i];
+      // outside the boundary case
       if ((newx >= 0 && newx < _grid_size->x) && (newy >= 0 && newy < _grid_size->y) &&
           (newz >= 0 && newz < _grid_size->z)) {
         //if (newx != c.x || newy != c.y || newz != c.z) {
@@ -417,9 +422,9 @@ vector<int64_t> *Tissue::get_neighbors(GridCoords c) {
 }
 
 // RECURSIVE build neighborhood of size distance
-// dist_rank: 0 is Moore neighborhood, 1 is Moore ring of 1 cell around that, etc.
+// dist_rank: 0 is Moore neighborhood, 1 is a ring of 1 cell around Moore neighborhood, 2 is ring of 2 cells, etc.
 // NOT a pointer, just creates the object then destroys it
-set<int64_t> Tissue::get_neighborhood(GridCoords c, unsigned dist_rank){
+std::set<int64_t> Tissue::get_neighborhood(GridCoords c, unsigned dist_rank){
   GridPoint *grid_point = Tissue::get_local_grid_point(grid_points, c.to_1d());
   //set<int64_t> grid_point_neighbors_set(grid_point->neighbors.begin(), grid_point->neighbors.end());
   set<int64_t> grid_point_neighbors_set(grid_point->neighbors->begin(), grid_point->neighbors->end());
@@ -430,7 +435,7 @@ set<int64_t> Tissue::get_neighborhood(GridCoords c, unsigned dist_rank){
     neighbors_neighbors.insert(neighbors_set.begin(), neighbors_set.end());
   }
 neighbors_neighbors.insert(grid_point_neighbors_set.begin(), grid_point_neighbors_set.end());
-return neighbors_neighbors;
+return grid_point_neighbors_set;
 }
 
 int64_t Tissue::get_num_local_grid_points() { return grid_points->size(); }
@@ -546,12 +551,17 @@ bool Tissue::try_add_new_tissue_tcell(int64_t grid_i) {
                     int64_t grid_i, dist_object<int64_t> &tcells_generated) {
                    GridPoint *grid_point = Tissue::get_local_grid_point(grid_points, grid_i);
                    // grid point is already occupied by a tcell, don't add
+                   std::cout << "gridcoords x: " << grid_point->coords.x << " y: " << grid_point->coords.y << " z: " << grid_point->coords.z << std::endl;
+                   // above line is just trying to visualize the grid points, but we have bigger problems
                    if (grid_point->tcell) return false;
                    if (grid_point->chemokine < _options->min_chemokine) return false;
                    new_active_grid_points->insert({grid_point, true});
                    string tcell_id = to_string(rank_me()) + "-" + to_string(*tcells_generated);
                    (*tcells_generated)++;
-                   grid_point->tcell = new TCell(tcell_id);
+                   double ini_heading = _rnd_gen->get(0.0, 360.0);
+                   //int tts = _rnd_gen->get_poisson(_options->tcell_tissue_period);
+                   grid_point->tcell = new TCell(tcell_id, ini_heading);
+                   //grid_point->tcell = new TCell(tcell_id, ini_heading, tts);
                    grid_point->tcell->moved = true;
                    return true;
                  },
@@ -571,8 +581,11 @@ bool Tissue::try_add_tissue_tcell(int64_t grid_i, TCell &tcell) {
                // grid point is already occupied by a tcell, don't add
                if (grid_point->tcell) return false;
                new_active_grid_points->insert({grid_point, true});
+               //tcell->moved = true;
                tcell.moved = true;
-               grid_point->tcell = new TCell(tcell); // Steve & Ariana's way
+               grid_point->tcell = new TCell(tcell); // Steve & Ariana's way; we'll see if this uses our constructor
+               //grid_point->tcell = new TCell(tcell.id, tcell.heading, tcell.tissue_time_steps);
+               //grid_point->tcell->heading = tcell.heading;
                //grid_point->tcell = &tcell; // Carter's way
                return true;
              },

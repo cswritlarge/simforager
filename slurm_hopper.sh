@@ -1,14 +1,15 @@
 #!/bin/bash
-#SBATCH --partition=biocomp
+#SBATCH --partition=condo
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=32
 #SBATCH --time=2-00:00
 #SBATCH --job-name=simforager
-#SBATCH --mail-user=jchayes@unm.edu
+#SBATCH --mail-user=
 #SBATCH --mail-type=END
 #SBATCH --mem=0
 
 # Setup environment
+export GASNET_BACKTRACE=1
 export GASNET_MAX_SEGSIZE=128MB/P
 export UPCXX=/opt/spack/opt/spack/linux-rocky8-cascadelake/gcc-12.1.0/upcxx-2020.10.0-6eh2prmiaolqfqinq4wjbb5by6z2phw6/bin/upcxx
 export UPCXX_BIN=/opt/spack/opt/spack/linux-rocky8-cascadelake/gcc-12.1.0/upcxx-2020.10.0-6eh2prmiaolqfqinq4wjbb5by6z2phw6/bin

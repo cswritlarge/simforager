@@ -30,6 +30,7 @@ using std::pair;
 using std::shared_ptr;
 using std::to_string;
 using std::vector;
+using std::set;
 
 enum class ViewObject { VIRUS, TCELL_TISSUE, EPICELL, CHEMOKINE };
 
@@ -95,15 +96,28 @@ struct TCell {
   string id;
   int binding_period = -1;
   int tissue_time_steps = -1;
-  double heading = _rnd_gen->get(0.0, 360.0);
-  double kappa = 300; // this should be between 0 and 1, correct?
-  //double kappa = _options->kappa;
+  double heading = 999;
+  double kappa = _options->kappa; 
   bool moved = true;
 
-  UPCXX_SERIALIZED_FIELDS(id, binding_period, tissue_time_steps, moved);
+  UPCXX_SERIALIZED_FIELDS(id, binding_period, heading, tissue_time_steps, moved);
+  
+  // used for try_add_tissue_tcell
+  //TCell(const string &id);
 
-  TCell(const string &id);
+  //TCell(const string &id, const double &heading);
+  TCell(const string &id, const double heading);
 
+  //TCell(const string &id, const double &heading, const int &ts);
+  // full TCell copy constructor
+  TCell(const TCell& t) : id(t.id), heading(t.heading), tissue_time_steps(t.tissue_time_steps) {
+  }; 
+
+  // full TCell copy assignment operator
+  //TCell& operator=(const TCell& other);
+  
+  private:
+  // default constructor
   TCell();
 };
 
@@ -143,6 +157,7 @@ struct GridPoint {
   TCell *tcell = nullptr;
   // starts off empty and if calculated because this grid point becomes active, it is saved
   vector<int64_t> *neighbors = nullptr;
+  std::set<int64_t> *neighborhood = nullptr; // simreef
   float chemokine = 0, nb_chemokine = 0;
   float virions = 0, nb_virions = 0;
 

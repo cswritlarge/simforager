@@ -280,6 +280,8 @@ class Options {
   int sample_resolution = 1;
   int max_block_dim = 10;
 
+  double kappa = 0;
+
   bool tcells_follow_gradient = false;
 
   bool show_progress = false;
@@ -404,6 +406,8 @@ class Options {
         ->capture_default_str();
     app.add_option("-o,--output", output_dir, "Output directory")->capture_default_str();
     app.add_option("--lung-model", lung_model_dir, "Directory containing files for lung model")
+        ->capture_default_str();
+    app.add_option("--kappa", kappa, "kappa value for Von Mises Correlated Random Walk")
         ->capture_default_str();
     app.add_flag("--progress", show_progress, "Show progress");
     app.add_flag("-v, --verbose", verbose, "Verbose output");

@@ -96,11 +96,16 @@ struct TCell {
   string id;
   int binding_period = -1;
   int tissue_time_steps = -1;
-  double heading = 999;
-  double kappa = _options->kappa; 
   bool moved = true;
+  double heading = 999;                 // can be radians or degrees - good luck!
+  double kappa = _options->kappa;
+  GridCoords curr_cords = (0, 0, 0);     // coordinates of current location
+  //int ngbr_radius = _options->radius;   // add radius to the options document
+  int ngbr_radius = 0;                // how large a radius shall we count fish (how far fish can see)
+  int ngbr_fish = 0;                  // how many fish are currently in radius
+  double algae_eaten = 0;             // a fish shall know what it has eaten
 
-  UPCXX_SERIALIZED_FIELDS(id, binding_period, heading, tissue_time_steps, moved);
+  UPCXX_SERIALIZED_FIELDS(id, binding_period, tissue_time_steps, moved, heading, kappa, curr_cords, ngbr_radius, ngbr_fish, algae_eaten);
   
   // used for try_add_tissue_tcell
   //TCell(const string &id);
@@ -108,9 +113,8 @@ struct TCell {
   //TCell(const string &id, const double &heading);
   TCell(const string &id, const double heading);
 
-  //TCell(const string &id, const double &heading, const int &ts);
   // full TCell copy constructor
-  TCell(const TCell& t) : id(t.id), heading(t.heading), tissue_time_steps(t.tissue_time_steps) {
+  TCell(const TCell& t) : id(t.id), tissue_time_steps(t.tissue_time_steps), heading(t.heading), kappa(t.kappa), curr_cords(t.curr_cords), ngbr_radius(t.ngbr_radius), ngbr_fish(t.ngbr_fish), algae_eaten(t.algae_eaten) {
   }; 
 
   // full TCell copy assignment operator
@@ -179,7 +183,8 @@ inline int64_t get_num_grid_points() {
 }
 
 class Tissue {
- private:
+ //private:
+ public:
   using grid_points_t = upcxx::dist_object<vector<GridPoint>>;
   grid_points_t grid_points;
   vector<GridPoint>::iterator grid_point_iter;
@@ -190,6 +195,16 @@ class Tissue {
 
   HASH_TABLE<GridPoint *, bool> active_grid_points;
   HASH_TABLE<GridPoint *, bool>::iterator active_grid_point_iter;
+
+  // this did not work, go figure
+  //using fish_t = upcxx::dist_object<VECTOR<TCell *>>;
+  //fish_t all_fish;
+
+  using new_fish_t = upcxx::dist_object<HASH_TABLE<TCell *, bool>>;
+  new_fish_t new_fish;
+
+  HASH_TABLE<TCell *, bool> all_fish;
+  HASH_TABLE<TCell *, bool>::iterator fisherator; //will iterate new_fish into all_fish
 
   int64_t num_circulating_tcells;
   upcxx::dist_object<int64_t> tcells_generated;
@@ -241,10 +256,14 @@ class Tissue {
   GridPoint *get_first_active_grid_point();
   GridPoint *get_next_active_grid_point();
 
+  void print_all_fish();
+
   void set_active(GridPoint *grid_point);
   void erase_active(GridPoint *grid_point);
 
   void add_new_actives(IntermittentTimer &timer);
+  void settle_fish(IntermittentTimer &timer);
+  void erase_fish(TCell *tcell);
 
   size_t get_num_actives();
 
